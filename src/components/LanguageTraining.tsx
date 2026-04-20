@@ -7,7 +7,7 @@ const levels = [
     number: "01",
     title: "N5 — Beginner Level",
     description: "Build your foundation with Hiragana, Katakana, essential grammar, vocabulary, and simple sentence construction.",
-    image: "https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/52681506-5be7-46e2-0c50-4ff17ba4ad00/public"
+    image: "https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/23cb4237-2c7a-4de2-6035-8e79023ca200/public"
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const levels = [
     number: "03",
     title: "N3 — Advanced Level",
     description: "Master advanced grammar and Kanji while developing real-world communication skills for academic and workplace environments.",
-    image: "https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/23cb4237-2c7a-4de2-6035-8e79023ca200/public"
+    image: "https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/a93f7eab-529f-49bc-f33a-db65b4d6a400/public"
   }
 ];
 

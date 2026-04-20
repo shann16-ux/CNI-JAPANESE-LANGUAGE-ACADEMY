@@ -66,7 +66,7 @@ export default function BankLoanSupport() {
               className="flex-1 w-full aspect-[16/10] rounded-[32px] overflow-hidden shadow-xl"
             >
               <img
-                src="https://picsum.photos/seed/finance/1200/800"
+                src="https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/d4a60518-13b5-4d7f-3839-fb5bee380800/public"
                 alt="Financial planning for studies in Japan"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

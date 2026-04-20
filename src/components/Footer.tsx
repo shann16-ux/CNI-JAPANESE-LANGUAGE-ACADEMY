@@ -62,13 +62,15 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-japan-red">Connect</h4>
             <div className="flex gap-4">
               {[
-                { icon: Facebook, label: "Facebook" },
-                { icon: Instagram, label: "Instagram" },
-                { icon: MessageCircle, label: "WhatsApp" }
+                { icon: Facebook, label: "Facebook", url: "https://www.facebook.com/profile.php?id=61552792306225&mibextid=wwXIfr&mibextid=wwXIfr" },
+                { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/cnijapaneselanguage?igsh=M2l1dTl3bmdiazh6" },
+                { icon: MessageCircle, label: "WhatsApp", url: "https://wa.me/94113502902" }
               ].map((social) => (
                 <motion.a
                   key={social.label}
-                  href="#"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-japan-red transition-colors"
                 >

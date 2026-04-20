@@ -26,7 +26,7 @@ export default function CEOMessage() {
             className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-gray-200"
           >
             <img
-              src="https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/6e85e0bd-9c84-43b6-66e8-93b5040aaf00/public"
+              src="https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/3a69b071-ba96-4d62-f03e-5e2f3d2bc900/public"
               alt="CEO Portrait"
               className="w-full h-full object-cover transition-all duration-700"
               referrerPolicy="no-referrer"

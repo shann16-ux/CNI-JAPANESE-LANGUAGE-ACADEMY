@@ -66,7 +66,7 @@ export default function PartTimeJobGuidance() {
               className="flex-1 w-full aspect-[16/10] rounded-[32px] overflow-hidden shadow-xl"
             >
               <img
-                src="https://picsum.photos/seed/japan-cafe/1200/800"
+                src="https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/4f778853-9e21-4b36-654b-3206281ef100/public"
                 alt="Student part-time work in Japan"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
