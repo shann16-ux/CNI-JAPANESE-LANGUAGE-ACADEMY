@@ -16,7 +16,7 @@ export default function About() {
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-japan-red mb-4 block">Our Story</span>
             <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-black mb-8">About Us</h1>
             <p className="text-xl text-black/60 font-medium leading-relaxed mb-8">
-              CNI Japanese Institute was founded with a single mission: to bridge the gap between Sri Lankan students and their dreams of living in Japan.
+              CNI Japanese Language Academy was founded with a single mission: to bridge the gap between Sri Lankan students and their dreams of living in Japan.
             </p>
             <div className="space-y-6 text-black/40 leading-relaxed font-medium">
               <p>

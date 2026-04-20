@@ -56,7 +56,7 @@ export default function Gallery() {
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-japan-red mb-4 block">Visual Journey</span>
           <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-black mb-8">Gallery</h1>
           <p className="text-xl text-black/40 font-medium max-w-2xl mx-auto">
-            Explore the moments, celebrations, and learning experiences at CNI Japanese Institute.
+            Explore the moments, celebrations, and learning experiences at CNI Japanese Language Academy.
           </p>
         </motion.div>
 

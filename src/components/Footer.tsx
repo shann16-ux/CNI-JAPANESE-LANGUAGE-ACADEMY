@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6">
           <p className="text-white/20 text-[10px] uppercase tracking-widest">
-            © 2026 CNI Japanese Institute. All Rights Reserved.
+            © 2026 CNI Japanese Language Academy. All Rights Reserved.
           </p>
           <div className="flex gap-8">
             <Link to="#" className="text-white/20 text-[10px] uppercase tracking-widest hover:text-white transition-colors">Privacy Policy</Link>

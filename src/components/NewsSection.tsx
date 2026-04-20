@@ -13,10 +13,10 @@ interface NewsItem {
 const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "New Student Intake for July 2026 Now Open",
+    title: "New Student Intake for April 2027 Now Open",
     image: "https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/c57381d0-c929-474a-8497-f6e06f747c00/public",
-    excerpt: "Start your journey to Japan with our upcoming July intake. Limited seats available for N5 and N4 levels.",
-    content: "We are excited to announce that applications for the July 2026 intake are now officially open. This intake is specifically designed for students aiming for the October 2026 visa cycle. Our comprehensive program includes intensive language training, document preparation, and interview coaching."
+    excerpt: "Start your journey to Japan with our upcoming April intake. Limited seats available for N5 and N4 levels.",
+    content: "We are excited to announce that applications for the April 2027 intake are now officially open. This intake is specifically designed for students aiming for the October 2027 visa cycle. Our comprehensive program includes intensive language training, document preparation, and interview coaching."
   },
   {
     id: 2,
