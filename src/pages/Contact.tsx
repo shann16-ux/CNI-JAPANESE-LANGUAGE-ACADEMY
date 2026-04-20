@@ -26,7 +26,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Phone</h4>
-                  <p className="text-xl font-medium">0113 502 902</p>
+                  <p className="text-xl font-medium">+94 113 502 902</p>
                 </div>
               </div>
 
