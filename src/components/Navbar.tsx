@@ -69,17 +69,19 @@ export default function Navbar() {
           </div>
 
           {/* CTA & Hamburger */}
-          <div className="flex items-center gap-6">
-            <Link 
-              to="/contact"
-              className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://lms.cnijapanese.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
                 isScrolled 
-                  ? "bg-black text-white hover:bg-japan-red" 
-                  : "bg-white text-black hover:bg-japan-red hover:text-white"
+                  ? "bg-black text-white hover:bg-japan-red shadow-lg shadow-black/10" 
+                  : "bg-white text-black hover:bg-japan-red hover:text-white shadow-lg shadow-white/10"
               }`}
             >
-              Start Your Journey <ArrowRight className="w-3 h-3" />
-            </Link>
+              Student Login
+            </a>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -123,15 +125,17 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="mt-12"
+                transition={{ delay: 0.5 }}
+                className="mt-12 w-full px-6 flex flex-col items-center"
               >
-                <Link 
-                  to="/contact"
-                  className="flex items-center gap-3 px-10 py-5 bg-japan-red text-white rounded-full text-sm font-bold uppercase tracking-[0.2em]"
+                <a 
+                  href="https://lms.cnijapanese.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-3 px-10 py-5 bg-japan-red text-white rounded-full text-sm font-bold uppercase tracking-[0.2em] shadow-xl shadow-japan-red/20 hover:scale-105 transition-all"
                 >
-                  Start Your Journey <ArrowRight className="w-4 h-4" />
-                </Link>
+                  Student Login
+                </a>
               </motion.div>
             </div>
           </motion.div>

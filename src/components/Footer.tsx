@@ -20,6 +20,14 @@ export default function Footer() {
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
               Helping students build their future in Japan through premium language training and comprehensive visa guidance.
             </p>
+            <a 
+              href="https://lms.cnijapanese.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest hover:border-white/30 hover:text-white transition-all w-fit"
+            >
+              Student Login
+            </a>
           </div>
 
           {/* Column 2: Navigation */}
