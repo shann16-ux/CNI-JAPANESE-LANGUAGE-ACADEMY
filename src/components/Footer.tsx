@@ -56,37 +56,16 @@ export default function Footer() {
             </div>
             
             <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4 text-white/60">
-                <Phone className="w-4 h-4 text-japan-red shrink-0" />
-                <span className="text-sm">+94 113 502 902</span>
+              <div className="flex items-start gap-4 text-white/60">
+                <Phone className="w-4 h-4 text-japan-red shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-sm leading-tight">+94 113 502 902</span>
+                  <span className="text-sm leading-tight">+94 113 404 405</span>
+                </div>
               </div>
               <div className="flex items-center gap-4 text-white/60">
                 <Mail className="w-4 h-4 text-japan-red shrink-0" />
                 <span className="text-sm">cnijapanese@gmail.com</span>
-              </div>
-              
-              <div className="pt-6 border-t border-white/5 space-y-6">
-                <div className="flex items-start gap-3 text-white/60">
-                  <MapPin className="w-4 h-4 text-japan-red mt-1 shrink-0" />
-                  <div className="text-[11px] leading-relaxed">
-                    <p className="font-bold text-white/80 mb-1 uppercase tracking-wider">Kiribathgoda</p>
-                    <p>No : 166A, Makola Road, Kiribathgoda.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 text-white/60">
-                  <MapPin className="w-4 h-4 text-japan-red mt-1 shrink-0" />
-                  <div className="text-[11px] leading-relaxed">
-                    <p className="font-bold text-white/80 mb-1 uppercase tracking-wider">Matara</p>
-                    <p>139/5, Anagarika Dharmapala Road, Matara.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 text-white/60">
-                  <MapPin className="w-4 h-4 text-japan-red mt-1 shrink-0" />
-                  <div className="text-[11px] leading-relaxed">
-                    <p className="font-bold text-white/80 mb-1 uppercase tracking-wider">Kurunegala</p>
-                    <p>294/1/1, Kandy Road, Kurunegala.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -116,11 +95,41 @@ export default function Footer() {
 
         </div>
 
+        {/* Horizontal Addresses Section */}
+        <div className="py-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="flex items-start gap-4 text-white/60">
+            <MapPin className="w-5 h-5 text-japan-red mt-1 shrink-0" />
+            <div className="text-xs leading-relaxed">
+              <p className="font-bold text-white uppercase tracking-widest mb-1">Kiribathgoda</p>
+              <p className="text-white/40">No : 166A, Makola Road, Kiribathgoda.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 text-white/60">
+            <MapPin className="w-5 h-5 text-japan-red mt-1 shrink-0" />
+            <div className="text-xs leading-relaxed">
+              <p className="font-bold text-white uppercase tracking-widest mb-1">Matara</p>
+              <p className="text-white/40">139/5, Anagarika Dharmapala Road, Matara.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 text-white/60">
+            <MapPin className="w-5 h-5 text-japan-red mt-1 shrink-0" />
+            <div className="text-xs leading-relaxed">
+              <p className="font-bold text-white uppercase tracking-widest mb-1">Kurunegala</p>
+              <p className="text-white/40">294/1/1, Kandy Road, Kurunegala.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6">
-          <p className="text-white/20 text-[10px] uppercase tracking-widest">
-            © 2026 CNI Japanese Language Academy. All Rights Reserved.
-          </p>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-white/20 text-[10px] uppercase tracking-widest">
+              © 2026 CNI Japanese Language Academy. All Rights Reserved.
+            </p>
+            <p className="text-white/20 text-[10px] uppercase tracking-widest flex items-center gap-1">
+              Powered by <span className="text-japan-red font-bold">V9 Globe</span>
+            </p>
+          </div>
           <div className="flex gap-8">
             <Link to="#" className="text-white/20 text-[10px] uppercase tracking-widest hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="text-white/20 text-[10px] uppercase tracking-widest hover:text-white transition-colors">Terms of Service</Link>

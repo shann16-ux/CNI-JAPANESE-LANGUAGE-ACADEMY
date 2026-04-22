@@ -79,7 +79,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold uppercase tracking-widest text-black/40 mb-1">Call Us</h4>
-                    <p className="text-lg font-semibold text-black tracking-tight">+94 113 502 902</p>
+                    <div className="flex flex-col">
+                      <p className="text-lg font-semibold text-black tracking-tight leading-tight">+94 113 502 902</p>
+                      <p className="text-lg font-semibold text-black tracking-tight leading-tight">+94 113 404 405</p>
+                    </div>
                   </div>
                 </div>
 
@@ -130,19 +133,6 @@ export default function Contact() {
                 </motion.div>
               </div>
 
-              <div className="pt-8 border-t border-black/5">
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-black/40 mb-4 text-center">Academy Hours</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-2xl border border-black/5">
-                    <p className="text-[10px] font-bold uppercase text-black/30 mb-1">Mon - Sat</p>
-                    <p className="text-sm font-bold text-black">8:30 AM - 5:30 PM</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-black/5">
-                    <p className="text-[10px] font-bold uppercase text-black/30 mb-1">Sunday</p>
-                    <p className="text-sm font-bold text-black">Closed</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
 
