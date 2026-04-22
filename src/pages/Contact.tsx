@@ -49,7 +49,15 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      let result;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        console.error("Non-JSON response:", text);
+        throw new Error("Server returned an unexpected response. Please contact support.");
+      }
 
       if (response.ok) {
         setStatus('success');
@@ -58,9 +66,9 @@ export default function Contact() {
         setErrorMessage(result.error || "Something went wrong. Please try again.");
       }
     } catch (err) {
-      console.error(err);
+      console.error("Fetch Error:", err);
       setStatus('error');
-      setErrorMessage("Network error. Please check your connection.");
+      setErrorMessage(err instanceof Error ? err.message : "Network error. Please check your connection.");
     }
   };
 
@@ -174,7 +182,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-black mb-2">Message Sent!</h3>
-                  <p className="text-black/50">Thank you for reaching out. We'll get back to you shortly at wdmalshann16@gmail.com.</p>
+                  <p className="text-black/50">Thank you for reaching out. We'll get back to you shortly at cnijapanese@gmail.com.</p>
                 </div>
                 <button 
                   onClick={() => setStatus('idle')}

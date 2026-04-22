@@ -14,8 +14,14 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Health check
+  app.get("/api/health", (req, res) => {
+    res.json({ status: "ok", resendConfigured: !!resend });
+  });
+
   // API Routes
   app.post("/api/contact", async (req, res) => {
+    console.log("Received contact form submission:", req.body);
     const { name, email, phone, subject, message } = req.body;
 
     if (!resend) {
@@ -26,7 +32,7 @@ async function startServer() {
     try {
       const { data, error } = await resend.emails.send({
         from: 'CNI Academy <onboarding@resend.dev>', // Resend default for unverified domains
-        to: ['wdmalshann16@gmail.com'],
+        to: ['cnijapanese@gmail.com'],
         subject: `Contact Form: ${subject}`,
         html: `
           <h3>New Contact Form Submission</h3>
