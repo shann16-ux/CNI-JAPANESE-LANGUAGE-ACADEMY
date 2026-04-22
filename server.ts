@@ -26,7 +26,7 @@ async function startServer() {
     try {
       const { data, error } = await resend.emails.send({
         from: 'CNI Academy <onboarding@resend.dev>', // Resend default for unverified domains
-        to: ['cnijapanese@gmail.com'],
+        to: ['wdmalshann16@gmail.com'],
         subject: `Contact Form: ${subject}`,
         html: `
           <h3>New Contact Form Submission</h3>
