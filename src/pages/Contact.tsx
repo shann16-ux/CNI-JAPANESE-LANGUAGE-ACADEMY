@@ -32,38 +32,20 @@ export default function Contact() {
     setErrorMessage("");
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
-
+    
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+        body: formData,
       });
 
-      let result;
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        result = await response.json();
-      } else {
-        const text = await response.text();
-        console.error("Non-JSON response:", text);
-        throw new Error("Server returned an unexpected response. Please contact support.");
-      }
+      const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setStatus('success');
       } else {
         setStatus('error');
-        setErrorMessage(result.error || "Something went wrong. Please try again.");
+        setErrorMessage(result.message || "Something went wrong. Please try again.");
       }
     } catch (err) {
       console.error("Fetch Error:", err);
@@ -178,11 +160,11 @@ export default function Contact() {
                 className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12"
               >
                 <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500" />
+                  <CheckCircle2 className="w-10 h-10 text-Japan-red" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-black mb-2">Message Sent!</h3>
-                  <p className="text-black/50">Thank you for reaching out. We'll get back to you shortly at cnijapanese@gmail.com.</p>
+                  <p className="text-black/50">Thank you for reaching out. We have received your inquiry and will get back to you shortly.</p>
                 </div>
                 <button 
                   onClick={() => setStatus('idle')}
@@ -193,6 +175,10 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form className="space-y-8" onSubmit={handleSubmit}>
+                <input type="hidden" name="access_key" value="6c6890ca-2e27-466a-9e98-1be930f45eb7" />
+                <input type="hidden" name="subject" value="New Student Inquiry - CNI Japanese" />
+                <input type="hidden" name="from_name" value="CNI Japanese Academy" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest font-bold text-black/40 ml-4">Full Name</label>
@@ -228,9 +214,9 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-black/40 ml-4">Subject</label>
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-black/40 ml-4">Inquiry Category</label>
                   <select 
-                    name="subject"
+                    name="category"
                     className="w-full px-6 py-4 rounded-2xl bg-white border border-black/5 focus:border-japan-red outline-none transition-all appearance-none"
                   >
                     <option>Student Visa Inquiry</option>
