@@ -205,15 +205,15 @@ export default function JourneySection() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.6 }}
-              className="order-1 lg:order-2 flex flex-col items-start text-left"
+              className="order-1 lg:order-2 flex flex-col items-start text-left pt-2 md:pt-0"
             >
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-japan-red mb-4">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-japan-red mb-2 md:mb-4">
                 Institutional Network
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-black mb-8">
+              <h2 className="text-3xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight text-black mb-4 md:mb-10">
                 Partnered with 100+ <br /> A Grade Japanese Schools
               </h2>
-              <p className="text-lg md:text-xl text-black/50 leading-relaxed font-medium">
+              <p className="text-sm md:text-2xl text-black/50 leading-relaxed font-medium max-w-2xl">
                 We work with a trusted network of leading institutions across Japan, 
                 giving students access to stronger academic pathways, reliable 
                 placement opportunities, and well-connected study options.

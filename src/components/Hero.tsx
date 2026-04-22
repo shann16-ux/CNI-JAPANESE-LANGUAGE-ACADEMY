@@ -24,9 +24,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-          className="mb-4 text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight whitespace-nowrap sm:whitespace-normal"
+          className="mb-4 text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight"
         >
-          Your Trusted Pathway to Japan
+          Your Trusted Pathway <br className="sm:hidden" /> to Japan
         </motion.h1>
 
         {/* Subtitle */}

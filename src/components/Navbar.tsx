@@ -28,6 +28,9 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  const isLightPage = location.pathname !== "/";
+  const showRedNavbar = isScrolled || isLightPage;
+
   return (
     <>
       <motion.nav
@@ -36,17 +39,17 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           isScrolled 
-            ? "py-4 bg-white/80 backdrop-blur-md border-bottom border-black/5 shadow-sm" 
+            ? "py-4 bg-white/80 backdrop-blur-md border-b border-black/5 shadow-sm" 
             : "py-8 bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="relative z-50">
             <img 
               src="https://imagedelivery.net/el9pEPAD6kV02rsnFsj9dg/3cf9ac09-0b5d-4c70-529f-1546eb413e00/public" 
               alt="CNI Logo" 
-              className="site-logo transition-all duration-500" 
+              className="h-10 md:h-12 w-auto transition-all duration-500" 
             />
           </Link>
 
@@ -57,26 +60,26 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={`relative text-sm font-medium uppercase tracking-widest transition-colors duration-500 group ${
-                  isScrolled ? "text-black/60 hover:text-black" : "text-white/60 hover:text-white"
-                } ${location.pathname === link.path ? (isScrolled ? "text-black" : "text-white") : ""}`}
+                  showRedNavbar ? "text-japan-red/60 hover:text-japan-red" : "text-white/60 hover:text-white"
+                } ${location.pathname === link.path ? (showRedNavbar ? "text-japan-red" : "text-white") : ""}`}
               >
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full ${
-                  isScrolled ? "bg-black" : "bg-white"
+                  showRedNavbar ? "bg-japan-red" : "bg-white"
                 } ${location.pathname === link.path ? "w-full" : ""}`} />
               </Link>
             ))}
           </div>
 
           {/* CTA & Hamburger */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a 
               href="https://lms.cnijapanese.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
-                isScrolled 
-                  ? "bg-black text-white hover:bg-japan-red shadow-lg shadow-black/10" 
+              className={`flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
+                showRedNavbar 
+                  ? "bg-japan-red text-white hover:bg-black shadow-lg shadow-japan-red/20" 
                   : "bg-white text-black hover:bg-japan-red hover:text-white shadow-lg shadow-white/10"
               }`}
             >
@@ -85,11 +88,11 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`relative z-50 lg:hidden p-2 transition-colors duration-500 ${
-                isScrolled || isMobileMenuOpen ? "text-black" : "text-white"
+              className={`relative z-50 lg:hidden p-1.5 sm:p-2 transition-colors duration-500 ${
+                showRedNavbar || isMobileMenuOpen ? "text-japan-red" : "text-white"
               }`}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
@@ -115,7 +118,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.path}
-                    className="text-4xl md:text-5xl font-semibold tracking-tight text-black hover:text-japan-red transition-colors"
+                    className="text-4xl md:text-5xl font-semibold tracking-tight text-japan-red hover:text-black transition-colors"
                   >
                     {link.name}
                   </Link>

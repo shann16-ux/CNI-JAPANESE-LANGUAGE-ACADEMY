@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
   return (
     <section 
       ref={containerRef}
-      className="relative py-48 md:py-64 bg-[#FDFDFD] overflow-hidden min-h-[120vh] flex items-center justify-center"
+      className="relative py-16 md:py-64 bg-[#FDFDFD] overflow-hidden min-h-screen md:min-h-[120vh] flex flex-col md:items-center md:justify-center"
     >
       {/* Subtle Ambient Background Effect */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -162,18 +162,18 @@ export default function TestimonialsSection() {
         />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mb-12 md:mb-0">
         <motion.h2
           style={{ scale: titleScale, opacity: titleOpacity }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-black leading-[1.1]"
+          className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight text-black leading-[1.1]"
         >
           Real Stories from <br />
           <span className="text-japan-red">Our Students</span>
         </motion.h2>
       </div>
 
-      {/* Floating Review Cards */}
-      <div className="absolute inset-0 z-20 pointer-events-none md:pointer-events-auto">
+      {/* Floating Review Cards (Desktop) */}
+      <div className="hidden md:block absolute inset-0 z-20 pointer-events-auto">
         {reviews.map((review) => (
           <motion.div
             key={review.id}
@@ -191,7 +191,7 @@ export default function TestimonialsSection() {
               rotate: review.rotate,
               width: review.width,
             }}
-            className="absolute hidden md:block overflow-visible"
+            className="absolute overflow-visible"
           >
             <motion.div
               animate={{
@@ -222,28 +222,28 @@ export default function TestimonialsSection() {
             </motion.div>
           </motion.div>
         ))}
+      </div>
 
-        {/* Mobile Layout: Simplified Grid/List for small screens */}
-        <div className="md:hidden mt-24 px-6 grid grid-cols-1 gap-6 relative z-30">
-          {reviews.slice(0, 4).map((review) => (
-            <motion.div
-              key={`mobile-${review.id}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg border border-black/5 overflow-visible"
-            >
-              <img
-                src={review.src}
-                alt={review.name}
-                className="floating-media"
-                loading="eager"
-                onError={(e) => handleImageError(e, review.name)}
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-          ))}
-        </div>
+      {/* Mobile Layout: Vertical List for small screens */}
+      <div className="md:hidden relative z-30 px-6 flex flex-col gap-8 w-full max-w-sm mx-auto">
+        {reviews.slice(0, 7).map((review) => (
+          <motion.div
+            key={`mobile-${review.id}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl shadow-lg border border-black/5 overflow-hidden"
+          >
+            <img
+              src={review.src}
+              alt={review.name}
+              className="w-full h-auto"
+              loading="eager"
+              onError={(e) => handleImageError(e, review.name)}
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        ))}
       </div>
     </section>
   );

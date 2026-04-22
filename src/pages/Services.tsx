@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="pt-48 pb-32 border-b border-black/5">
+      <section className="pt-24 md:pt-48 pb-16 md:pb-32 border-b border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
             {/* Left Side: Content */}
@@ -124,11 +124,17 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="flex flex-col sm:flex-row items-center gap-6"
               >
-                <button className="px-8 py-4 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-japan-red transition-all duration-300 flex items-center gap-2 group">
-                  Explore Language Training <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <button 
+                  onClick={() => document.getElementById('visa-process-anchor')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                  className="px-8 py-4 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-japan-red transition-all duration-300 flex items-center gap-2 group"
+                >
+                  View Process <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-8 py-4 border border-black/10 text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300">
-                  View Visa Pathways
+                <button 
+                  onClick={() => document.getElementById('language-training-anchor')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-4 border border-black/10 text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300"
+                >
+                  Explore Language Training
                 </button>
               </motion.div>
             </div>

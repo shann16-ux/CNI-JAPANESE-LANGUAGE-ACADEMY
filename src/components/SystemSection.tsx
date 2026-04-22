@@ -16,25 +16,38 @@ function PathwayStep({ title, progress, range, isLast }: StepProps) {
   const lineScale = useTransform(progress, [range[0], range[1] + 0.05], [0, 1]);
 
   return (
-    <div className="flex flex-col items-center flex-1 relative">
-      <motion.div 
-        style={{ opacity, scale }}
-        className="w-4 h-4 rounded-full border-2 border-white bg-white z-10 mb-4 shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-      />
-      <motion.span 
-        style={{ opacity }}
-        className="text-xs font-medium uppercase tracking-wider text-white/60 text-center px-2"
-      >
-        {title}
-      </motion.span>
+    <div className="flex flex-row md:flex-col items-center flex-1 relative w-full md:w-auto pb-8 md:pb-0 last:pb-0">
+      {/* Horizontal Line (Desktop) */}
       {!isLast && (
-        <div className="absolute top-2 left-[50%] w-full h-[1px] bg-white/10 -z-0">
+        <div className="hidden md:block absolute top-2 left-[50%] w-full h-[1px] bg-white/10 -z-0">
           <motion.div 
             style={{ scaleX: lineScale }}
             className="h-full bg-white origin-left"
           />
         </div>
       )}
+
+      {/* Vertical Line (Mobile) */}
+      {!isLast && (
+        <div className="md:hidden absolute left-[7px] top-4 w-[1px] h-full bg-white/10 -z-0">
+          <motion.div 
+            style={{ scaleY: lineScale }}
+            className="w-full bg-white origin-top"
+          />
+        </div>
+      )}
+
+      <motion.div 
+        style={{ opacity, scale }}
+        className="w-4 h-4 rounded-full border-2 border-white bg-white z-10 mr-6 md:mr-0 md:mb-4 shadow-[0_0_15px_rgba(255,255,255,0.5)] shrink-0"
+      />
+      
+      <motion.span 
+        style={{ opacity }}
+        className="text-[10px] md:text-xs font-bold md:font-medium uppercase tracking-wider text-white px-0 md:px-2 text-left md:text-center"
+      >
+        {title}
+      </motion.span>
     </div>
   );
 }
@@ -46,12 +59,12 @@ function LanguageLevel({ title, description, progress, range, highlight }: StepP
   return (
     <motion.div 
       style={{ opacity, y }}
-      className={`p-8 rounded-2xl border ${highlight ? 'border-white bg-white/10' : 'border-white/10 bg-white/5'} flex-1 transition-all duration-500 backdrop-blur-sm`}
+      className={`p-5 md:p-8 rounded-2xl border ${highlight ? 'border-white bg-white/10' : 'border-white/10 bg-white/5'} flex-1 transition-all duration-500 backdrop-blur-sm`}
     >
-      <h4 className={`text-xl font-semibold mb-3 text-white`}>
+      <h4 className={`text-lg md:text-xl font-semibold mb-2 md:mb-3 text-white`}>
         {title}
       </h4>
-      <p className="text-sm text-white/60 leading-relaxed">
+      <p className="text-xs md:text-sm text-white/60 leading-relaxed">
         {description}
       </p>
     </motion.div>
@@ -94,12 +107,12 @@ export default function SystemSection() {
         {/* Phase 1: Intro */}
         <motion.div 
           style={{ opacity: introOpacity, y: introY }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16 md:pt-0"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-6">
+          <h2 className="text-2xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6">
             A Complete System. <br /> Not Just a Course.
           </h2>
-          <p className="text-lg md:text-xl text-white/60 font-medium tracking-wide">
+          <p className="text-sm md:text-xl text-white/60 font-medium tracking-wide">
             Everything you need to move from Sri Lanka to Japan — structured, guided, and proven.
           </p>
         </motion.div>
@@ -107,10 +120,10 @@ export default function SystemSection() {
         {/* Phase 2: Language Training */}
         <motion.div 
           style={{ opacity: langOpacity, y: langY }}
-          className="absolute inset-0 flex flex-col items-center justify-center max-w-6xl mx-auto w-full px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center max-w-6xl mx-auto w-full px-6 pt-20 md:pt-0"
         >
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-white mb-4">Highlight Section</span>
-          <h3 className="text-3xl md:text-5xl font-semibold text-white mb-12">Japanese Language Training (N5 → N3)</h3>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-white mb-3 md:mb-4">Highlight Section</span>
+          <h3 className="text-xl md:text-5xl font-semibold text-white mb-6 md:mb-12">Japanese Language Training (N5 → N3)</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             <LanguageLevel 
@@ -138,12 +151,12 @@ export default function SystemSection() {
         {/* Phase 3: Student Visa Pathway */}
         <motion.div 
           style={{ opacity: visaOpacity, y: visaY }}
-          className="absolute inset-0 flex flex-col items-center justify-center max-w-5xl mx-auto w-full px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center max-w-5xl mx-auto w-full px-6 pt-20 md:pt-0"
         >
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-white mb-4">Core Focus</span>
-          <h3 className="text-3xl md:text-5xl font-semibold text-white mb-16">Student Visa Pathway</h3>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-white mb-3 md:mb-4">Core Focus</span>
+          <h3 className="text-xl md:text-5xl font-semibold text-white mb-8 md:mb-16">Student Visa Pathway</h3>
           
-          <div className="flex w-full mb-16">
+          <div className="flex flex-col md:flex-row w-full mb-8 md:mb-16 px-4 md:px-0">
             <PathwayStep title="Institution Selection" progress={smoothProgress} range={[0.48, 0.52]} />
             <PathwayStep title="Application" progress={smoothProgress} range={[0.55, 0.59]} />
             <PathwayStep title="Documentation" progress={smoothProgress} range={[0.62, 0.66]} />
@@ -158,9 +171,9 @@ export default function SystemSection() {
         {/* Phase 4: Additional Support */}
         <motion.div 
           style={{ opacity: supportOpacity, y: supportY }}
-          className="absolute inset-0 flex flex-col items-center justify-center max-w-5xl mx-auto w-full px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center max-w-5xl mx-auto w-full px-6 pt-20 md:pt-0"
         >
-          <h3 className="text-3xl md:text-5xl font-semibold text-white mb-16">Beyond the Classroom</h3>
+          <h3 className="text-xl md:text-5xl font-semibold text-white mb-8 md:mb-16 text-center">Beyond the Classroom</h3>
           
           <div className="flex flex-wrap justify-center gap-8">
             {[

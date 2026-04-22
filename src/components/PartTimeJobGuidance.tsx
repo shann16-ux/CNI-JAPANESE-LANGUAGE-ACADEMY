@@ -3,7 +3,7 @@ import { Briefcase } from "lucide-react";
 
 export default function PartTimeJobGuidance() {
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section className="py-10 md:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative group">
           <div className="flex flex-col lg:flex-row items-center gap-16 p-8 md:p-16 rounded-[40px] border border-black/5 bg-gray-50/50 hover:bg-white hover:shadow-2xl transition-all duration-700">

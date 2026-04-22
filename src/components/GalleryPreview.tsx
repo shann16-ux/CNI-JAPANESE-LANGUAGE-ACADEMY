@@ -31,9 +31,9 @@ const galleryImages = [
 
 export default function GalleryPreview() {
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section className="pt-10 pb-20 md:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-24 items-center">
           
           {/* Left Side: Text Content */}
           <div className="max-w-xl">
@@ -63,9 +63,9 @@ export default function GalleryPreview() {
               </Link>
             </motion.div>
           </div>
-
+ 
           {/* Right Side: Creative Composition */}
-          <div className="relative mt-12 lg:mt-0">
+          <div className="relative mt-4 lg:mt-0">
             <div className="relative w-full max-w-md mx-auto lg:max-w-none">
               {galleryImages.map((img) => (
                 <motion.div

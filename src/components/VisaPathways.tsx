@@ -40,7 +40,7 @@ function StepItem({ step, index, total }: { step: typeof steps[0], index: number
   const isInView = useInView(ref, { margin: "-45% 0px -45% 0px" });
   
   return (
-    <div ref={ref} className="relative flex items-center justify-between mb-24 last:mb-0 w-full">
+    <div ref={ref} className="relative flex items-start justify-between mb-16 md:mb-24 last:mb-0 w-full pl-10 md:pl-0">
       {/* Timeline Dot */}
       <motion.div 
         animate={{ 
@@ -48,11 +48,11 @@ function StepItem({ step, index, total }: { step: typeof steps[0], index: number
           backgroundColor: isInView ? "#ffffff" : "transparent",
           borderColor: isInView ? "#ffffff" : "rgba(255,255,255,0.2)"
         }}
-        className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 z-10" 
+        className="absolute left-2 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 z-10 mt-1.5 md:mt-0" 
       />
       
       {/* Content */}
-      <div className={`w-[45%] ${isLeft ? "text-right pr-12" : "text-left pl-12 ml-auto"}`}>
+      <div className={`w-full md:w-[45%] ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12 md:ml-auto"}`}>
         <motion.div
           animate={{ 
             opacity: isInView ? 1 : 0.3,
@@ -60,14 +60,15 @@ function StepItem({ step, index, total }: { step: typeof steps[0], index: number
             x: isInView ? 0 : (isLeft ? -10 : 10)
           }}
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+          className="text-left md:contents"
         >
-          <span className={`font-bold tracking-widest text-sm mb-2 block transition-colors duration-500 ${isInView ? "text-white" : "text-white/20"}`}>
+          <span className={`font-bold tracking-widest text-xs md:text-sm mb-2 block transition-colors duration-500 ${isInView ? "text-white" : "text-white/20"}`}>
             {step.number}
           </span>
-          <h3 className={`text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-500 ${isInView ? "text-white" : "text-white/40"}`}>
+          <h3 className={`text-xl md:text-3xl font-bold md:font-semibold mb-3 md:mb-4 transition-colors duration-500 ${isInView ? "text-white" : "text-white/40"}`}>
             {step.title}
           </h3>
-          <p className={`leading-relaxed max-w-sm transition-colors duration-500 ${isLeft ? "ml-auto mr-0" : ""} ${isInView ? "text-white/70" : "text-white/20"}`}>
+          <p className={`text-sm md:text-lg leading-relaxed max-w-sm transition-colors duration-500 ${isLeft ? "md:ml-auto md:mr-0" : ""} ${isInView ? "text-white/70" : "text-white/20"}`}>
             {step.description}
           </p>
         </motion.div>
@@ -94,7 +95,7 @@ export default function VisaPathways() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative py-32 bg-[#BC002D] overflow-hidden">
+    <section ref={containerRef} className="relative py-10 md:py-32 bg-[#BC002D] overflow-hidden">
       {/* Parallax Background */}
       <motion.div 
         style={{ y: backgroundY }}
@@ -150,7 +151,7 @@ export default function VisaPathways() {
         </div>
 
         {/* Steps Section Title */}
-        <div className="text-center mb-24">
+        <div id="visa-process-anchor" className="text-center mb-24">
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -171,9 +172,9 @@ export default function VisaPathways() {
         </div>
 
         {/* Timeline Section */}
-        <div ref={timelineRef} className="relative max-w-5xl mx-auto py-20">
+        <div ref={timelineRef} className="relative max-w-5xl mx-auto py-12 md:py-20">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-white/10">
+          <div className="absolute left-2 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-white/10">
             <motion.div 
               style={{ scaleY, originY: 0 }}
               className="w-full h-full bg-white"

@@ -56,9 +56,9 @@ export default function LanguageTraining() {
   const springX = useSpring(x, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <section className="bg-[#BC002D] text-white">
+    <section id="language-training-anchor" className="bg-[#BC002D] text-white">
       {/* Section Intro */}
-      <div className="pt-32 pb-12 max-w-7xl mx-auto px-6">
+      <div className="pt-16 md:pt-32 pb-8 md:pb-12 max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function LanguageTraining() {
       </div>
 
       {/* Training Method */}
-      <div className="py-32 max-w-7xl mx-auto px-6">
+      <div className="py-10 md:py-32 max-w-7xl mx-auto px-6">
         <div className="pt-32 border-t border-white/10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-24">

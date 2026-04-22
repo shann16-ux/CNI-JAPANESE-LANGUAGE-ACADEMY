@@ -123,10 +123,10 @@ export default function NewsSection() {
   const otherNews = newsData.slice(1);
 
   return (
-    <section className="py-32 md:py-48 bg-[#FDFDFD]">
+    <section className="py-10 md:py-48 bg-[#FDFDFD]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Row: Heading + Featured Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-12 md:mb-24 items-center">
           {/* Left Side Heading Block */}
           <div className="space-y-6">
             <motion.h2
