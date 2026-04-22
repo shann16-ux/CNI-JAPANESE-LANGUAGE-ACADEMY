@@ -28,20 +28,34 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    // Professional Validation
+    if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setStatus('error');
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!data.phone || data.phone.length < 8) {
+      setStatus('error');
+      setErrorMessage("Please provide a valid phone number.");
+      return;
+    }
+
     setStatus('loading');
     setErrorMessage("");
 
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
-
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -181,8 +195,8 @@ export default function Contact() {
                   <CheckCircle2 className="w-10 h-10 text-green-500" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-2">Message Sent!</h3>
-                  <p className="text-black/50">Thank you for reaching out. We'll get back to you shortly at cnijapanese@gmail.com.</p>
+                  <h3 className="text-2xl font-bold text-black mb-2">Arigatou!</h3>
+                  <p className="text-black/50">Your message has been sent. We will contact you soon.</p>
                 </div>
                 <button 
                   onClick={() => setStatus('idle')}
