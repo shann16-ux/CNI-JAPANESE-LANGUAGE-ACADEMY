@@ -83,7 +83,7 @@ export default function Navbar() {
                   : "bg-white text-black hover:bg-japan-red hover:text-white shadow-lg shadow-white/10"
               }`}
             >
-              Student Login
+              Login
             </a>
 
             <button
@@ -137,7 +137,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-3 px-10 py-5 bg-japan-red text-white rounded-full text-sm font-bold uppercase tracking-[0.2em] shadow-xl shadow-japan-red/20 hover:scale-105 transition-all"
                 >
-                  Student Login
+                  Login
                 </a>
               </motion.div>
             </div>
