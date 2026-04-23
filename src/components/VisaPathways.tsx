@@ -19,13 +19,13 @@ const steps = [
   },
   {
     number: "04",
-    title: "Visa Processing",
-    description: "We guide you through the visa process with a structured approach to ensure approval."
+    title: "Application & Documentation",
+    description: "We assist with applications, required documents, and financial preparation."
   },
   {
     number: "05",
-    title: "Application & Documentation",
-    description: "We assist with applications, required documents, and financial preparation."
+    title: "Visa Processing",
+    description: "We guide you through the visa process with a structured approach to ensure approval."
   },
   {
     number: "06",

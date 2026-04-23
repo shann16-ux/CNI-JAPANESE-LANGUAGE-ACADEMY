@@ -127,7 +127,7 @@ export default function Footer() {
               © 2026 CNI Japanese Language Academy. All Rights Reserved.
             </p>
             <p className="text-white/20 text-[10px] uppercase tracking-widest flex items-center gap-1">
-              Powered by <span className="text-japan-red font-bold">V9 Globe</span>
+              Powered by <a href="https://v9globe.com" target="_blank" rel="noopener noreferrer" className="text-japan-red font-bold hover:underline transition-all">V9 Globe</a>
             </p>
           </div>
           <div className="flex gap-8">
